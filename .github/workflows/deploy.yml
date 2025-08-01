@@ -12,9 +12,12 @@ jobs:
   deploy-function:
     runs-on: ubuntu-latest
     steps:
-      # 1. Checkout del código
+      # 1. Checkout del código. Esto crea la estructura /home/runner/work/bibioapp/bibioapp/
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          # Le decimos que clone el contenido DENTRO de una subcarpeta llamada 'bibioapp'
+          path: bibioapp
 
       # 2. Instalar la CLI de Supabase
       - name: Install Supabase CLI
@@ -22,10 +25,11 @@ jobs:
         with:
           version: latest
 
-      # 3. Despliega la función (¡AQUÍ ESTÁ EL CAMBIO!)
-      # Le decimos explícitamente a la CLI dónde encontrar las funciones.
+      # 3. Despliega la función (¡AQUÍ ESTÁ LA MAGIA!)
+      # Le decimos a este paso que se ejecute DESDE DENTRO de la subcarpeta 'bibioapp'
       - name: Deploy Edge Function
+        working-directory: ./bibioapp
         run: |
-          supabase functions deploy --functions-path ./supabase/functions admin-user-manager --project-ref ihameevapgnfkzrlezjc --no-verify-jwt
+          supabase functions deploy admin-user-manager --project-ref ihameevapgnfkzrlezjc --no-verify-jwt
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
