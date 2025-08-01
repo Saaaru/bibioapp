@@ -1,0 +1,33 @@
+# Nombre del flujo de trabajo
+name: Deploy Supabase Function
+
+# Cuándo se ejecuta este flujo de trabajo
+on:
+  push:
+    branches:
+      - main  # Se ejecutará cada vez que hagas un push a la rama 'main'
+
+# Los trabajos que se van a realizar
+jobs:
+  deploy-function:
+    # El tipo de máquina virtual en la que se ejecutará
+    runs-on: ubuntu-latest
+
+    # Los pasos que se ejecutarán en secuencia
+    steps:
+      # 1. Obtiene una copia de tu código desde el repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Instala la CLI de Supabase en la máquina virtual
+      - name: Install Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest # Siempre usa la última versión
+
+      # 3. Despliega la función usando el token que guardamos en los Secrets
+      - name: Deploy Edge Function
+        run: |
+          supabase functions deploy admin-user-manager --project-ref ihameevapgnfkzrlezjc --no-verify-jwt
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
