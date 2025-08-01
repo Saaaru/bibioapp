@@ -1,5 +1,33 @@
 {
+  "name": "bibioapp",
+  "version": "1.0.0",
+  "description": "Sistema de gestión de biblioteca con Supabase",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx supabase start",
+    "stop": "npx supabase stop",
+    "reset": "npx supabase db reset",
+    "deploy:functions": "npx supabase functions deploy admin-user-manager --project-ref ihameevapgnfkzrlezjc",
+    "db:push": "npx supabase db push",
+    "db:pull": "npx supabase db pull",
+    "db:diff": "npx supabase db diff",
+    "studio": "npx supabase studio",
+    "status": "npx supabase status"
+  },
+  "keywords": [
+    "biblioteca",
+    "supabase",
+    "postgresql",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT",
   "devDependencies": {
     "supabase": "^2.33.7"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
