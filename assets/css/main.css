@@ -1,0 +1,26 @@
+/* Importamos todos nuestros módulos de CSS */
+@import url('./base/_variables.css');
+@import url('./base/_reset.css');
+@import url('./components/_navbar.css');
+@import url('./components/_buttons.css');
+@import url('./pages/_login.css');
+@import url('./components/_tables.css');
+@import url('./layout/_page.css');
+@import url('./components/_forms.css');
+@import url('./components/_badges.css');
+
+/* Estilos generales de layout */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}

@@ -1,0 +1,23 @@
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    text-transform: uppercase;
+}
+
+.status-active {
+    background-color: #1a4a39; /* Verde oscuro */
+    color: #c9f7e4;
+}
+
+.status-overdue {
+    background-color: #5d1a15; /* Rojo oscuro */
+    color: #f7cac9;
+}
+
+.text-danger {
+    color: #ff8a80; /* Un rojo claro para destacar */
+    font-weight: bold;
+}

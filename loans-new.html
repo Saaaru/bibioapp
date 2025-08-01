@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiblioApp - Registrar Nuevo Préstamo</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script type="module" src="https://esm.sh/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <header id="navbar-container"></header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Registrar Nuevo Préstamo</h1>
+        </div>
+
+        <div class="form-container">
+            <form id="new-loan-form">
+                <div class="form-control">
+                    <label for="user_id" class="label">Usuario de la Biblioteca</label>
+                    <select name="user_id" id="user_id" class="input" required disabled>
+                        <option value="">Cargando usuarios...</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <label for="book_id" class="label">Libro Disponible</label>
+                    <select name="book_id" id="book_id" class="input" required disabled>
+                        <option value="">Cargando libros...</option>
+                    </select>
+                </div>
+
+                <div id="error-message" class="alert-error" style="display: none;"></div>
+                <div id="success-message" class="alert-success" style="display: none;"></div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submit-button" class="btn btn-primary" disabled>Crear Préstamo</button>
+                    <a href="/" class="btn btn-ghost">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="/assets/js/main.js"></script>
+    <script type="module" src="/assets/js/pages/loans-new.js"></script>
+</body>
+</html>

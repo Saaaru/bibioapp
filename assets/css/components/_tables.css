@@ -1,0 +1,45 @@
+.table-container {
+    overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas */
+    background-color: var(--color-surface);
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-border);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse; /* Une los bordes de las celdas */
+}
+
+.table th, .table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.table thead th {
+    font-weight: 600;
+    color: #bdbdbd; /* Un gris más claro para los headers */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none; /* Quita el borde de la última fila */
+}
+
+.table tbody tr:hover {
+    background-color: #373737; /* Un color de fondo sutil al pasar el ratón */
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}

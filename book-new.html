@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiblioApp - Añadir Nuevo Libro</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script type="module" src="https://esm.sh/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <header id="navbar-container"></header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Añadir Nuevo Libro</h1>
+        </div>
+
+        <div class="form-container">
+            <form id="new-book-form">
+                <div class="form-control">
+                    <label for="title" class="label">Título</label>
+                    <input type="text" id="title" name="title" class="input" required>
+                </div>
+                <div class="form-control">
+                    <label for="author" class="label">Autor</label>
+                    <input type="text" id="author" name="author" class="input" required>
+                </div>
+                <div class="form-control">
+                    <label for="isbn" class="label">ISBN</label>
+                    <input type="text" id="isbn" name="isbn" class="input" required>
+                </div>
+                <div class="form-control">
+                    <label for="stock_quantity" class="label">Cantidad en Stock</label>
+                    <input type="number" id="stock_quantity" name="stock_quantity" class="input" required min="0" value="1">
+                </div>
+
+                <div id="error-message" class="alert-error" style="display: none;"></div>
+                <div id="success-message" class="alert-success" style="display: none;"></div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submit-button" class="btn btn-primary">Guardar Libro</button>
+                    <a href="/books.html" class="btn btn-ghost">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="/assets/js/main.js"></script>
+    <script type="module" src="/assets/js/pages/book-new.js"></script>
+
+</body>
+</html>

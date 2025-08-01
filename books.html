@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiblioApp - Catálogo de Libros</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script type="module" src="https://esm.sh/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <header id="navbar-container"></header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Catálogo de Libros</h1>
+            <a href="/book-new.html" class="btn btn-primary">Añadir Nuevo Libro</a>
+        </div>
+
+        <!-- Contenedor para la tabla de libros -->
+        <div id="books-table-container" class="table-container">
+            <!-- La tabla se generará aquí con JavaScript -->
+            <p id="loading-message">Cargando libros...</p>
+        </div>
+    </main>
+
+    <script type="module" src="/assets/js/main.js"></script>
+    <script type="module" src="/assets/js/pages/books.js"></script>
+
+</body>
+</html>

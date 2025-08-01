@@ -1,0 +1,36 @@
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-primary-text);
+}
+.btn-primary:hover {
+    background-color: #4a0cc4; /* Un poco más oscuro */
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-primary-text);
+}
+.btn-secondary:hover {
+    background-color: #d100a3;
+}
+
+.btn-ghost {
+    background-color: transparent;
+    border-color: var(--color-border);
+    color: var(--color-text);
+}
+.btn-ghost:hover {
+    background-color: var(--color-surface);
+    border-color: var(--color-text);
+}
