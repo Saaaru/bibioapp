@@ -10,24 +10,22 @@ on:
 # Los trabajos que se van a realizar
 jobs:
   deploy-function:
-    # El tipo de máquina virtual en la que se ejecutará
     runs-on: ubuntu-latest
-
-    # Los pasos que se ejecutarán en secuencia
     steps:
-      # 1. Obtiene una copia de tu código desde el repositorio
+      # 1. Checkout del código
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Instala la CLI de Supabase en la máquina virtual
+      # 2. Instalar la CLI de Supabase
       - name: Install Supabase CLI
         uses: supabase/setup-cli@v1
         with:
-          version: latest # Siempre usa la última versión
+          version: latest
 
-      # 3. Despliega la función usando el token que guardamos en los Secrets
+      # 3. Despliega la función (¡AQUÍ ESTÁ EL CAMBIO!)
+      # Le decimos explícitamente a la CLI dónde encontrar las funciones.
       - name: Deploy Edge Function
         run: |
-          supabase functions deploy admin-user-manager --project-ref ihameevapgnfkzrlezjc --no-verify-jwt
+          supabase functions deploy --functions-path ./supabase/functions admin-user-manager --project-ref ihameevapgnfkzrlezjc --no-verify-jwt
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
